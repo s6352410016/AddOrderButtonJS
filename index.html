@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d47cb01634.js" crossorigin="anonymous"></script>
+    <title>Add Order Button</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            user-select: none;
+        }
+        .container{
+            width: 150px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            background-color: rgb(250, 250, 250);
+        }
+        .container div{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #555;
+            cursor: pointer;
+            transition: .2s;
+        }
+        .container div i{
+            color: #444;
+        }
+        .container div:hover{
+            background-color: #ededed;
+        }
+        .container span{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid #555;
+            border-bottom: 1px solid #555;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="btnLeft"><i class="fas fa-plus"></i></div> <span id="showNumber">1</span> <div id="btnRight"><i class="fas fa-minus"></i></div>
+    </div>
+    <script>
+        const btnLeft = document.getElementById("btnLeft");
+        const btnRight = document.getElementById("btnRight");
+        const showNumber = document.getElementById("showNumber");
+        let value = 1;
+
+        btnLeft.onclick = () => {
+            value++;
+            showNumber.innerHTML = value;
+        }
+
+        btnRight.onclick = () =>{
+            value--;
+            if(value < 0){
+                value = 0;
+            }
+            showNumber.innerHTML = value;
+        }
+
+    </script>
+</body>
+</html>
